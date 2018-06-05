@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+    background: url("../images/galaxy.jpg") no-repeat;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 0 auto;
+    display: grid;
+  }
+  div.columns {
+    align-self: center;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+  img:hover {
+     cursor: pointer;  
+  }

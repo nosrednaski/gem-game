@@ -6,18 +6,20 @@
   
   // **************** This Doc is Ready ************************
 $(function(){
-      
+    
   // *********** Declare Variables ***********************
   var wins = 0;
   var losses = 0;
-  var hasFinished = false;
-  var smallRandom = Math.floor((Math.random()*12)+1);
   var bigRandom = Math.floor(Math.random()*(100 - 35 + 1))+ 35;
-  var guess = 0
+  var gemValue = bigRandom;
+  var guess = 0;
+  var gem1 = Math.floor((Math.random()*12)+1);
+  var gem2 = Math.floor((Math.random()*12)+1);
+  var gem3 = Math.floor((Math.random()*12)+1);
+  var gem4 = Math.floor((Math.random()*12)+1);
   
   // each gem is assigned a random number for that game. guess is reset at 0 for each new game. 
   function reset() {
-    hasFinished = false;
     var gemValue = bigRandom;
     var guess = 0; 
     var gem1 = Math.floor((Math.random()*12)+1);
@@ -31,44 +33,37 @@ $(function(){
     $( "#wins" ).text(wins);
     $( "#losses").text(losses);
     $( "#gemValue" ).text(bigRandom);
-    $( "#guess" ).text(parseInt(guess));
+    $( "#guess" ).text(guess);
    } 
   
   // ************************ On Clicks ********************************
   $( "#gem1" ).click(function(){
-      guess = gem1 + guess;
-      updateDisplay();
-      checkWin();
-      checkLoss();
+      guess += gem1; 
   });
   
   $( "#gem2" ).click(function(){
-      guess = gem2 + guess;
-      updateDisplay();
-      checkWin();
-      checkLoss();
+      guess += gem2 ;
   });
   
   $( "#gem3" ).click(function(){
-      guess = gem3 + guess;
-      updateDisplay();
-      checkWin();
-      checkLoss();
+      guess += gem3;
     });
   
   $( "#gem4" ).click(function(){
-      guess = gem4 + guess;
+      guess += gem4;
+  });
+
+  $(document).click(function(){
       updateDisplay();
       checkWin();
       checkLoss();
-      
-  });
-   console.log(guess);
+  })
+  
   // ******************************** Win **********************************
+  // Checks for win condition, guess = gemValue. Adds to win count. Sends alert and resets the game. 
   function checkWin() {
     if (guess === gemValue) {
-        win++;
-        hasFinished = true;
+        wins++;
         alert("A gem of breathtaking beauty and power! Yours at last.")
         reset();
     }
@@ -76,10 +71,10 @@ $(function(){
 
   
   //******************************** Lose ***********************************
+  // Checks for loss condition, guess > gemValue. Adds to loss count. Sends loss alert and resets game.     
   function checkLoss() {
     if (guess > gemValue) {
         losses++;
-        hasFinished = true;
         alert("A fine gem shattered and lost forever...")
         reset();
     }
