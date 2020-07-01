@@ -1,17 +1,20 @@
 html, body {
     height: 100%;
-    background: url("../images/galaxy.jpg") no-repeat;
+    background: url("../images/galaxy.jpg") repeat;
   }
   body {
     display: flex;
     flex-direction: column;
   }
+  button.button {
+    float: right;
+  }
+
   .content {
     flex: 1 0 auto;
-    display: grid;
   }
   div.columns {
-    align-self: center;
+    margin-top: 12rem;
   }
   .footer {
     flex-shrink: 0;
@@ -19,3 +22,25 @@ html, body {
   img:hover {
      cursor: pointer;  
   }
+  div.modal {
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      
+  }
+  div.modal-content {
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  }
+  div.message-header h1{
+    margin: 0 auto;
+  }
+  .message-header.win {
+    background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 42%, rgba(252,176,69,1) 100%);
+  }
+  .message-header.lose {
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(20,1,41,1) 100%);
+  }
+  

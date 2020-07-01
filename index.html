@@ -16,9 +16,12 @@
     <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
+          <div class="level">
           <h1 class="title">
             Combine the Gems. Match the Number.
           </h1>
+          <button class="button is-link is-large" id="resetBtn" >Reset</button>
+        </div>
         </div>
       </div>
     </section>
@@ -27,17 +30,17 @@
     <section class="content">    
       <div class="container">
         <div class = "columns is-centered">
-          <div class="column is-2">
+          <div class="column is-3">
             <img  id="gem1" src="./assets/images/jade.png" alt="Guess gem 1" style="width:222px;height:222px;">
           </div>  
-          <div class="column is-2">
-            <img  id="gem2" src="./assets/images/onyx.png" alt="Guess gem 2" style="width:222px;height:222px;">
+          <div class="column is-3">
+            <img  id="gem2" src="./assets/images/topa.png" alt="Guess gem 2" style="width:222px;height:222px;">
           </div>
-          <div class="column is-2">
-            <img  id="gem3" src="./assets/images/topa.png" alt="Guess gem 3" style="width:222px;height:222px;">
+          <div class="column is-3">
+            <img  id="gem3" src="./assets/images/onyx.png" alt="Guess gem 3" style="width:222px;height:222px;">
           </div>
-          <div class="column is-2">
-            <img  id="gem4" src="./assets/images/emer.png" alt="Guess gem 4" style="width:222px;height:222px;">
+          <div class="column is-3">
+            <img  id="gem4" src="./assets/images/diam.png" alt="Guess gem 4" style="width:222px;height:222px;">
           </div>
         </div>
       </div>   
@@ -63,7 +66,6 @@
                   <p class="title" id = "wins"></p>
               </div>
             </div>
-            
             <div class="level-item has-text-centered">
               <div>
                   <p class="heading">Gems Destroyed</p>
@@ -72,10 +74,39 @@
             </div>
         </div>    
       </section>
+      
+      <div class="modal" id="winModal">
+        <div class="modal-content" >
+          <article class="message" >
+            <div >
+            <div class="message-header win ">
+              <h1>🎉 Victory! 🎉</h1>
+              <button id="winBtn"class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+              A 💎 of breathtaking beauty and power! Yours at last.
+            </div>
+          </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="modal" id="loseModal">
+        <div class="modal-content" >
+            <article class="message ">
+              <div class="message-header lose ">
+                <h1>💀 Crushed. 💀</h1>
+                <button id="loseBtn" class="delete" aria-label="delete"></button>
+              </div>
+              <div class="message-body">
+                A fine 💎 shattered and lost forever...
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
 
   <script>
-      resetGame();
-      updateDisplay();
   </script>
   
   </body>
