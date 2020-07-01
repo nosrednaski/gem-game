@@ -1,5 +1,5 @@
 # Gem Game
-![Gem Game Picture](assets/images/gems.png)
+![Gem Game Picture](./assets/images/gems.png)
 ## Instructions
 - click the gems to start adding numbers to your guess
 - try and match the gem value to win a gem!
