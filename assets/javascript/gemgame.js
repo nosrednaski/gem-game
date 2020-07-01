@@ -5,17 +5,17 @@ $(function(){
   let losses = 0;
   let gemValue = Math.floor(Math.random()*(100 - 35 + 1))+ 35;
   let guess = 0;
-  let gem1 = Math.floor((Math.random()*12)+1);
-  let gem2 = Math.floor((Math.random()*12)+1);
-  let gem3 = Math.floor((Math.random()*12)+1);
-  let gem4 = Math.floor((Math.random()*12)+1);
+  let gem1 = Math.floor((Math.random()*12)+3);
+  let gem2 = Math.floor((Math.random()*12)+3);
+  let gem3 = Math.floor((Math.random()*12)+3);
+  let gem4 = Math.floor((Math.random()*12)+3);
   
   function resetVals() {
     guess = 0
-    gem1 = Math.floor((Math.random()*12)+1);
-    gem2 = Math.floor((Math.random()*12)+1);
-    gem3 = Math.floor((Math.random()*12)+1);
-    gem4 = Math.floor((Math.random()*12)+1);
+    gem1 = Math.floor((Math.random()*12)+3);
+    gem2 = Math.floor((Math.random()*12)+3);
+    gem3 = Math.floor((Math.random()*12)+3);
+    gem4 = Math.floor((Math.random()*12)+3);
     gemValue = Math.floor(Math.random()*(100 - 35 + 1))+ 35;
   };
  
@@ -57,6 +57,11 @@ $(function(){
   $(document).click(function(){
       updateDisplay();
       checkOutcome();
+      console.log($(gem1))
+      console.log($(gem2))
+      console.log($(gem3))
+      console.log($(gem4))
+      console.log("~~~~~~~~~~~~~~~~~~")
   })
   
   
